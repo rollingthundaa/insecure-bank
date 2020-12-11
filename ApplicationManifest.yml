@@ -1,0 +1,18 @@
+application:
+  appId: sig-insecure-bank
+  assetId: sig-insecure-bank
+  projectLanguage: Java
+  platformVersion: Wildfly 18
+  buildSystem: Maven
+  riskMatrixRevision: employeeApps-1.0
+  sourceFilePattern: ".*\\+\\+\\+.*(\\.java)+.*"
+  sensitivePackagePattern: "password"
+  fileChangeThreshold: 5
+
+environment:
+  enableJira: false
+  enableScm: false
+  scmOwner: "xenserverarmy"
+  scmRepositoryName: "insecure-bank"
+  scmBranchName: "master"
+  githubApiUrl: "https://api.github.com/repos/"
