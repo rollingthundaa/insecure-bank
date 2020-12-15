@@ -12,3 +12,7 @@ security:
       rescanThreshold: 4
     dast:
       rescanThreshold: 3
+    dastplusm:
+      enabled: false
+    sastplusm:
+      enabled: false
