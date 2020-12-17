@@ -11,7 +11,7 @@ application:
 
 environment:
   enableJira: false
-  enableScm: true
+  enableScm: false
   scmOwner: "xenserverarmy"
   scmRepositoryName: "insecure-bank"
   scmBranchName: "master"
