@@ -18,7 +18,7 @@ public class AccountDaoImpl implements AccountDao {
 	@Override
 	public List<Account> findUsersByUsernameAndPassword(final String username, final String password) {
 
-		String str = "select * from account where username='" + username + "' AND password='" + password + "'";
+		String str = "select * from account where username=? AND password=?";
 
 		RowMapper<Account> rowMapper = new RowMapper<Account>() {
 			@Override
@@ -32,12 +32,15 @@ public class AccountDaoImpl implements AccountDao {
 			}
 		};
 
-		return jdbcTemplate.query(str, rowMapper);
+		return jdbcTemplate.query(str,
+			new Object[] { username, password },
+			new int[] { java.sql.Types.VARCHAR, java.sql.Types.VARCHAR },
+			rowMapper);
 	}
 
 	@Override
 	public List<Account> findUsersByUsername(final String username) {
-		String str = "select * from account where username='" + username + "'";
+		String str = "select * from account where username=?";
 
 		RowMapper<Account> rowMapper = new RowMapper<Account>() {
 			@Override
@@ -51,7 +54,10 @@ public class AccountDaoImpl implements AccountDao {
 			}
 		};
 
-		return jdbcTemplate.query(str, rowMapper);
+		return jdbcTemplate.query(str,
+			new Object[] { username },
+			new int[] { java.sql.Types.VARCHAR },
+			rowMapper);
 	}
 
 	@Override
