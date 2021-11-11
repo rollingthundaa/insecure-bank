@@ -32,10 +32,14 @@ public class AccountDaoImpl implements AccountDao {
 			}
 		};
 
+		/*
 		return jdbcTemplate.query(str,
 			new Object[] { username, password },
 			new int[] { java.sql.Types.VARCHAR, java.sql.Types.VARCHAR },
 			rowMapper);
+		*/
+		// Attempt SQL injection on a single line.
+		return jdbcTemplate.query("select * from account where username='" + username + "' AND password='" + password + "'", rowMapper);
 	}
 
 	@Override

@@ -7,3 +7,4 @@ build.xml
 /.apt_generated_tests/
 .DS_Store
 .vscode
+idir
