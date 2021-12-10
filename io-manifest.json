@@ -1,0 +1,51 @@
+{
+  "application": {
+    "appId": "ssdc-insecurebank",
+    "assetId": "ssdc-insecurebank",
+    "projectName": "ssdc-insecurebank",
+    "projectLanguage": "Java",
+    "platformVersion": "WildFly18",
+    "buildSystem": "Jenkins",
+    "riskMatrixRevision": "Banking",
+    "sourceFilePattern": ".*\\+\\+\\+.*(\\.java)+.*",
+    "sensitivePackagePattern": ".*(\\+\\+\\+.*(\\/((a|A)pp|(c|C)rypto|(a|A)uth|(s|S)ec|(l|L)ogin|(p|P)ass|(o|O)auth|(t|T)oken|(i|I)d|(c|C)red|(s|S)aml|(c|C)ognito|(s|S)ignin|(s|S)ignup|(a|A)ccess))).*",
+    "fileChangeThreshold": 5
+  },
+  "environment": {
+    "enableJira": false,
+    "enableScm": false,
+    "scm": "github",
+    "scmOwner": "xenserverarmy",
+    "scmRepositoryName": "insecure-bank",
+    "scmBranchName": "master",
+    "githubUsername": "xenserverarmy",
+    "githubApiUrl": "https://api.github.com/repos/"
+  },
+  "security": {
+    "pipeline": {
+      "type": "csf",
+      "toolchain": "Hybrid"
+    },
+    "activities": {
+      "sast": {
+        "rescanThreshold": 2
+      },
+      "sca": {
+        "rescanThreshold": 3
+      },
+      "image": {
+        "rescanThreshold": 4
+      },
+      "dast": {
+        "rescanThreshold": 3
+      },
+      "dastplusm": {
+        "enabled": false,
+        "rescanThreshold": 100
+      },
+      "sastplusm": {
+        "enabled": false
+      }
+    }
+  }
+}
