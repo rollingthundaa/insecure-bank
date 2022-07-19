@@ -63,10 +63,12 @@
 			<div class="col-sm-5 col-lg-4">
 				<div class="login-copytext">
 					<h2>Welcome!</h2>
-					<p> Log in to access your checking, savings, credit cards, and mortgage accounts.</p>
+					<p> Log in to access demo checking, savings, credit cards, and mortgage accounts.</p>
 					<h2>Financial Security</h2>
 					<p>Check balances, make transfers, make payments, and make toast. Is it secure?
-					Absolutely not! Can you pay your rocket fuel bill quickly? Of course!</p>
+					Absolutely not! Can you pay your teleport bill quickly? Of course!</p>
+					<h2 style="color: red;">Data Privacy</h2>
+					<p style="color: red; font-style: italic;">This is a demo test application. All transactions are automatically reset nightly. If you need an account, please contact the SSDC team.</p>
 				</div>
 			</div>
 		</div>
