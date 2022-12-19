@@ -44,7 +44,7 @@ public class ActivityController {
 
 	Logger logger = LoggerFactory.getLogger(ActivityController.class);
 
-	@RequestMapping
+	@RequestMapping(method = RequestMethod.GET)
 	public String activity(final Model model, final Principal principal) {
 
 		CashAccount cashAccount = new CashAccount();
@@ -63,7 +63,7 @@ public class ActivityController {
 		return "accountActivity";
 	}
 
-	@RequestMapping("{account}/detail")
+	@RequestMapping("{account}/detail", method = RequestMethod.GET)
 	public String viewActivityByNumber(@PathVariable("account") final String number, final Model model, final Principal principal) {
 
 		CashAccount cashAccount = new CashAccount();
@@ -82,7 +82,7 @@ public class ActivityController {
 		return "accountActivity";
 	}
 
-	@RequestMapping("credit")
+	@RequestMapping("credit", method = RequestMethod.GET)
 	public String viewActivityByCreditNumber(@RequestParam("number") final String number, final Model model, final Principal principal) {
 
 		logger.info("Showing info for credit card:" + number);
