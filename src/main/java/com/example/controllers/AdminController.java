@@ -17,7 +17,7 @@ public class AdminController {
 	@Autowired
 	AccountDao accountDao;
 
-	@RequestMapping
+	@RequestMapping(method = RequestMethod.GET)
 	public String admin(final Model model, final Principal principal) {
 
 		Account account = accountDao.findUsersByUsername(principal.getName()).get(0);
