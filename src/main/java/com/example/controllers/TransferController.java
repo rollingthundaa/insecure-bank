@@ -41,7 +41,7 @@ public class TransferController {
 	@Autowired
 	TransfersFacade transfersFacade;
 
-	@RequestMapping
+	@RequestMapping (method = RequestMethod.GET)
 	public String newTransferForm(final Model model, final Principal principal, final HttpServletResponse response) {
 		List<CashAccount> cashAccounts = cashaccountDao.findCashAccountsByUsername(principal.getName());
 
