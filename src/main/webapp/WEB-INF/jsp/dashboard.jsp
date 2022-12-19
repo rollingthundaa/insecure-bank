@@ -165,7 +165,7 @@
 															<c:out value="${credit.number}"/></td>
 															<td><c:out value="${credit.description}"/></td>																		
 															<td align="right"><c:if test="${credit.availableBalance > 0}"></c:if><fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${credit.availableBalance}" /> USD</td>	
-															<spring:url value="/activity/credit.html?number=${credit.number}" var="url">
+															<spring:url value="/activity/credit?number=${credit.number}" var="url">
 															</spring:url>
 															<td><a href="${url}" class="btn btn-primary btn-xs"><i class="fa fa-search"></i> View activity</a></td>									
 														</tr>
