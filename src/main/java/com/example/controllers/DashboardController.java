@@ -49,7 +49,7 @@ public class DashboardController {
 	@Autowired
 	StorageFacade storageFacade;
 
-	@RequestMapping
+	@RequestMapping(method = RequestMethod.GET)
 	public String activity(final Model model, final Principal principal) {
 
 		Account account = accountDao.findUsersByUsername(principal.getName()).get(0);
